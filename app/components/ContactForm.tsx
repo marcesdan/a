@@ -22,17 +22,13 @@ const ContactForm = () => {
    const handleSubmit = async () => {
       setIsSaving(true);
       setHasError(false);
-
-      if (name === '' || email === '' || message === '') {
+      if (!name || !email || !message) {
          setHasError(true);
          setIsSaving(false);
          return false;
       }
-      
       const id = uuidv4();
-
       localStorage.setItem('idSugerencia', id);
-
       axios
          .post('/api/sugerencias', {
             id,
