@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const thankyou = () => {
 
-   const idSugerencia = localStorage.getItem('idSugerencia');
+   const idSugerencia = typeof window !== "undefined" && localStorage.getItem('idSugerencia');
 
    return (
       <div className='flex flex-col justify-center items-center h-screen px-8'>
